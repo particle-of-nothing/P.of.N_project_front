@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/construct_pc.css">
-    <link rel="stylesheet" href="assets/css/chiefslider.css">
-    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <!--<link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap" rel="stylesheet">-->
+    <link rel="stylesheet" href="assets/css/constructor.css">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">
     <title>Particle_project</title>
 </head>
 
@@ -20,7 +19,7 @@
                 <div class="search">
                     <input type="text" class="search-field" placeholder="Введите поисковый запрос">
                     <img src="assets/images/lupa.png" alt="" class="search-icon">
-                  </div>
+                </div>
                 <nav class="nav">
                     <a class="nav_link" href="contacts.html">контакты</a>
                     <a class="nav_link" href="FAQ.html">FAQ</a>
@@ -35,30 +34,49 @@
                     <a class="nav_link_two" href="pc-page.html">игровые пк</a>
                     <a class="nav_link_two" href="pc-page.html">офисные пк</a>
                     <a class="nav_link_two" href="pc-page.html">домашние пк</a>
-                    <a class="nav_link_two" href="construct_pc.html">сборка пк</a>
+                    <a class="nav_link_two" href="constructor.html">сборка пк</a>
                 </div>
                 <div class="nav_two_right">
-                    <a class="nav_link_two" href="construct_wp.html">конфигурация рабочего места</a>
+                    <a class="nav_link_two" href="constructor.html">конфигурация рабочего места</a>
                 </div>
             </div>
         </div>
-       
+
         <div class="page_name">
-            Конфигурация рабочего места
+            Конструктор персонального компьютера
+            <div class="subtitle-underline"></div>
         </div>
+
+        <div class="constructor-catalogue-wrapper">
+            <div class="products-list-wrapper">
+                <div id="products-list">
+                    <!-- filled by script -->
+                </div>
+            </div>
+            <div class="categories-list-wrapper">
+                <nav>
+                    <ul id="caterories-navigation">
+                        <!-- filled by script -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
     </div>
 
 
+    <!-- General scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
         integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-    <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/chiefslider.js" defer></script>
-    <script src="assets/js/slider.js" defer></script>
-    <script src="assets/js/dom.js" defer></script>
+    <script src="assets/js/consts.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- General scripts -->
+
+    <script src="assets/js/constructor.js"></script>
 </body>
 
 </html>

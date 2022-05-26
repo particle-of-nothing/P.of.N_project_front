@@ -1,0 +1,35 @@
+.constructor-catalogue-wrapper {
+    display: flex;
+}
+
+.categories-list-wrapper {
+    width: 30%;
+}
+
+.products-list-wrapper {
+    width: 70%;
+}
+
+ul {
+    padding: 0;
+}
+
+.category-link-item {
+    list-style: none;
+}
+
+.category-link {
+    color: var(--primary-color);
+}
+
+#products-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    height: 100px;
+    width: 33%;
+    background-color: var(--product-bg-color);
+    border-radius: var(--product-border-radius);
+}
