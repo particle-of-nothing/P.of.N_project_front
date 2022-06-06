@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/constructor.css">
-    <link rel="stylesheet" href="assets/css/chiefslider.css">
-    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">
     <!--<link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap" rel="stylesheet">-->
     <title>Particle_project</title>
 </head>
@@ -17,10 +17,13 @@
         <header class="header">
             <div class="header_inner">
                 <a class="header_logo_link" href="index.html">P.of.N_project</a>
-                <div class="search">
-                    <input type="text" class="search-field" placeholder="Введите поисковый запрос">
+                <div class="search" id="search">
+                    <input type="text" id="search-input" class="search-field" placeholder="Введите поисковый запрос">
                     <img src="assets/images/lupa.png" alt="" class="search-icon">
-                  </div>
+                    <div id="search-results-template" hidden>
+                        <!-- Products here -->
+                    </div>
+                </div>
                 <nav class="nav">
                     <a class="nav_link" href="contacts.html">контакты</a>
                     <a class="nav_link" href="FAQ.html">FAQ</a>
@@ -32,20 +35,80 @@
         <div class="block_one">
             <div class="space_between">
                 <div class="nav_two">
-                    <a class="nav_link_two" href="pc-page.html">игровые пк</a>
-                    <a class="nav_link_two" href="pc-page.html">офисные пк</a>
-                    <a class="nav_link_two" href="pc-page.html">домашние пк</a>
+                    <a class="nav_link_two" href="pc-page.html">каталог товаров</a>
                     <a class="nav_link_two" href="constructor.html">сборка пк</a>
                 </div>
                 <div class="nav_two_right">
-                    <a class="nav_link_two" href="constructor.html">конфигурация рабочего места</a>
+                    <a class="nav_link_two" href="wp-constructor.html">конфигурация рабочего места</a>
                 </div>
             </div>
         </div>
-       
-        <div class="page_name">
 
+        <div class="page_name">
+            Ваш профиль №
         </div>
+
+        <div class="main-div">
+            <div class="left-side-block">
+                <div class="profile-photo">
+
+                </div>
+            </div>
+            <div class="right-side-block">
+                <div class="outer-frame">
+                    <div class="text-blocks">
+                        <div class="field-name">
+                            <p>Логин:</p>
+                            <input type="text" class="input-block" size="12" />
+                        </div>
+                        <div class="field-name">
+                            <p>Никнейм:</p>
+                            <input type="text" class="input-block" size="12" />
+                        </div>
+                        <div class="field-name">
+                            <p>Имя:</p>
+                            <input type="text" class="input-block" size="12" />
+                        </div>
+                        <div class="field-name">
+                            <p>Фамилия:</p>
+                            <input type="text" class="input-block" size="12" />
+                        </div>
+                        <div class="field-name">
+                            <p>Пароль:</p>
+                            <input type="text" class="input-block" size="12" />
+                        </div>
+                    </div>
+                    <div class="right-side-footer">
+                        <a class="footer-settings-button" href="">Настроить профиль</a>
+                        <img src="assets/images/settings-icon.png" alt="" class="footer-settings-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer id="footer">
+            <div class="nav">
+                <a class="nav_link_two" href="pc-page.html">игровые пк</a>
+                <a class="nav_link_two" href="pc-page.html">офисные пк</a>
+                <a class="nav_link_two" href="pc-page.html">домашние пк</a>
+                <a class="nav_link_two" href="constructor.html">сборка пк</a>
+            </div>
+            <div><a class="header_logo_link" href="index.html">P.of.N_project</a></div>
+            <div class="media">
+                <img src="assets/images/vk-icon.png" alt="" class="icon">
+                <img src="assets/images/vk-icon.png" alt="" class="icon">
+                <img src="assets/images/vk-icon.png" alt="" class="icon">
+                <img src="assets/images/vk-icon.png" alt="" class="icon">
+                <img src="assets/images/vk-icon.png" alt="" class="icon">
+            </div>
+
+
+        </footer>
+    </div>
+
+    <div id="overlay-host">
+        <!-- Всяка всячина, чтобы показать поверх страницы -->
     </div>
 
 
@@ -55,10 +118,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
         integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src="assets/js/consts.js"></script>
+    <script src="assets/js/debounce.js"></script>
+    <script src="assets/js/overlay.js"></script>
     <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/chiefslider.js" defer></script>
-    <script src="assets/js/slider.js" defer></script>
-    <script src="assets/js/dom.js" defer></script>
+    <script src="assets/js/search.js"></script>
 </body>
 
 </html>

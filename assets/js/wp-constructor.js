@@ -11,7 +11,7 @@ const renderCategories = categories => {
         linkElementItem.appendChild(linkElement);
         linkElementItem.classList.add('category-link-item');
 
-        linkElement.href = `${DOMAIN}/constructor.html?${QUERY_PARAMS_SELECTED_CATEGORY_KEY}=${category.id_category}`;
+        linkElement.href = `${DOMAIN}/wp-constructor.html?${QUERY_PARAMS_SELECTED_CATEGORY_KEY}=${category.id_category}`;
         linkElement.innerText = category.category_name;
         linkElement.classList.add('category-link');
 
@@ -43,7 +43,7 @@ const renderProducts = products => {
     });
 }
 
-fetch(`${API_URL}/category?type=${PC_CONSTRUCTOR_CATEGORY_TYPE_ID}`)
+fetch(`${API_URL}/category?type=${WP_CONSTRUCTOR_CATEGORY_TYPE_ID}`)
     .then(response => response.json())
     .then(categories => {
         renderCategories(categories);

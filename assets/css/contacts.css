@@ -1,0 +1,52 @@
+.massenger-block,
+.contact-phone {
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+.massenger-icon {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    display: inline-block;
+}
+
+.massenger-link {
+    color: #888;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+.main-contacts-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-contacts-block {
+    width: 40%;
+    border-radius: var(--product-border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: stretch;
+}
+
+.right-contacts-block {
+    width: 55%;
+    border-radius: var(--product-border-radius);
+}
+
+.map {
+    height: 600px;
+    border: 2px solid #00994c;
+    border-radius: 12px;
+}
+
+iframe {
+    border-radius: var(--product-border-radius);
+}
+
+.subtitle-underline {
+    margin-bottom: 5px;
+}
