@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/constructor.css">
+    <link rel="stylesheet" href="assets/css/product-detail.css">
     <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Source+Sans+Pro&display=swap"
         rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&display=swap" rel="stylesheet">-->
     <title>Particle_project</title>
 </head>
 
@@ -43,33 +44,37 @@
             </div>
         </div>
 
-        <div class="page_name">
-            Конструктор персонального компьютера
-            <div class="subtitle-underline"></div>
+        <div class="product-name" id="main-name">
+            <h1 id="product-name"></h1>
+
         </div>
 
-        <div class="constructor-catalogue-wrapper">
-            <div class="products-list-wrapper">
-                <div class="products-list" id="constructor-products-list">
-                    <!-- filled by script -->
+        <div class="product-place">
+            <div class="left-side-product">
+                <div id="images">
+                    <img id="main-photo">
+                </div>
+                <div class="button-div">
+                    <button class="product-button">
+                        <span>Добавить в избранное</span>
+                    </button>
                 </div>
             </div>
-            <div class="categories-list-wrapper">
-                <nav>
-                    <ul id="caterories-navigation">
-                        <!-- filled by script -->
-                    </ul>
-                </nav>
-                <div class="outdoor-unit">
-                    <div class="wp-cotructor-transition">
-                        <a href="wp-constructor.html" class="wp-constructor-link">Конструктор рабочего места --></a>
-                    </div>
-                    <div class="last-step-construct">
-                        <a href="favourites.html" class="packets-link">Перейти к вашей сборке --></a>
+            <div class="right-side-product">
+                <div class="product-description-div">
+                    <h2>Описание:</h2>
+                    <span id="product-description"></span>
+                </div>
+                <div class="product-properties-div">
+                    <h2>Характеристики:</h2>
+                    <div id="properties">
                     </div>
                 </div>
+
             </div>
+
         </div>
+
         <div class="footer-img">
             <img src="assets/images/footer1d1d1d.png" id="footer-img">
         </div>
@@ -93,28 +98,15 @@
         </footer>
     </div>
 
-    <!-- Шаблон продукта -->
-    <div class="product-item" id="product-template" hidden>
-        <a>
-            <div class="product-inner">
-                <img>
-                <div class="product-info">
-                    <h4 class="title"></h4>
-                    <span class="props"></span>
-                </div>
-            </div>
-        </a>
-        <button>
-            <img src="assets/images/plus-icon.png" alt="">
-        </button>
+    <div id="property-template" class="product-option" hidden>
+        <div class="product-option-name"></div>
+        <div class="product-option-value"></div>
     </div>
 
     <div id="overlay-host">
         <!-- Всяка всячина, чтобы показать поверх страницы -->
     </div>
 
-
-    <!-- General scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
@@ -126,9 +118,7 @@
     <script src="assets/js/overlay.js"></script>
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/search.js"></script>
-    <!-- General scripts -->
-
-    <script src="assets/js/constructor.js"></script>
+    <script src="assets/js/product-details.js"></script>
 </body>
 
 </html>

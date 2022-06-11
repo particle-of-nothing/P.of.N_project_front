@@ -25,17 +25,25 @@ const renderCategories = categories => {
 
 const renderProducts = products => {
 
-    const productsListElement = document.getElementById('products-list');
-
+    const productsListElement = document.getElementById('constructor-products-list');
+    const productTemplateElement = document.getElementById('product-template');
+    
     productsListElement.innerHTML = '';
-
+    
     const productsElements = products.map(product => {
-        const productsElement = document.createElement('div');
+        const productElement = productTemplateElement.cloneNode(true);
+        productElement.removeAttribute('hidden')
+        
+        Element.prototype.querySelector.call(productElement, '.title').innerText = product.product_name;
+        Element.prototype.querySelector.call(productElement, '.props').innerText = product.description;
 
-        productsElement.classList.add('product-item');
-        productsElement.innerText = product.product_name;
+        const imageSrc = product.photo ? `assets/images/test/${product.photo}` : `assets/images/placeholder.png`;
+        Element.prototype.querySelector.call(productElement, '.product-inner img').src = imageSrc;
+        
+        Element.prototype.querySelector.call(productElement, 'a').href = `${DOMAIN}/product-details.html?${QUERY_PARAMS_PRODUCT_KEY}=${product.id_product}`;
+        Element.prototype.querySelector.call(productElement, 'button').addEventListener('click', () => { alert(product.id_product + ' ' + product.product_name); });
 
-        return productsElement;
+        return productElement;
     });
 
     productsElements.forEach(element => {
