@@ -1,0 +1,85 @@
+html,
+body {
+    background-color: rgb(0, 0, 0);
+    padding: 0;
+    margin: 0;
+    /*font-family: 'Akshar', sans-serif;*/
+    font-family: 'Source Sans Pro', sans-serif;
+
+
+    color: #888;
+    width: 100%;
+    height: 100%
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+
+.block {
+    position: relative;
+    top: 20%;
+    margin: 0 auto;
+    z-index: 2;
+    background-color: rgb(29, 29, 29);
+    width: 500px;
+    height: 450px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.form {
+    max-width: 320px;
+    padding: 15px;
+    margin: 0 auto;
+    margin-bottom: 90px;
+}
+
+.input {
+    display: block;
+    width: 300px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #16bb68;
+    font-size: 16px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+
+    border: 0;
+    background-color: #16bb68;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 16px;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #4fcc8d;
+}
+
+.auth-link {
+    text-decoration: none;
+    color: #888;
+    text-align: center;
+    margin-bottom: 20px;
+}

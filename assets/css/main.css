@@ -78,6 +78,11 @@ a:visited {
     z-index: 999;
 }
 
+#overlay-host.interactive {
+    pointer-events: initial;
+}
+
+
 #overlay-host>* {
     pointer-events: initial;
 }

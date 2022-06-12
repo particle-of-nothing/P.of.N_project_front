@@ -1,3 +1,6 @@
+const locationQueryParams = window.location.search;
+const queryParams = new URLSearchParams(locationQueryParams);
+
 const renderCategories = categories => {
 
     const categoriesMenuElement = document.getElementById('caterories-navigation');
@@ -11,7 +14,9 @@ const renderCategories = categories => {
         linkElementItem.appendChild(linkElement);
         linkElementItem.classList.add('category-link-item');
 
-        linkElement.href = `${DOMAIN}/constructor.html?${QUERY_PARAMS_SELECTED_CATEGORY_KEY}=${category.id_category}`;
+        const params = new URLSearchParams(locationQueryParams);
+        params.set(QUERY_PARAMS_SELECTED_CATEGORY_KEY, category.id_category);
+        linkElement.href = `${DOMAIN}/constructor.html?${params.toString()}`;
         linkElement.innerText = category.category_name;
         linkElement.classList.add('category-link');
 
@@ -34,14 +39,30 @@ const renderProducts = products => {
         const productElement = productTemplateElement.cloneNode(true);
         productElement.removeAttribute('hidden')
         
-        Element.prototype.querySelector.call(productElement, '.title').innerText = product.product_name;
-        Element.prototype.querySelector.call(productElement, '.props').innerText = product.description;
+        Element.prototype
+            .querySelector.call(productElement, '.title')
+            .innerText = product.product_name;
+        Element.prototype
+            .querySelector.call(productElement, '.props')
+            .innerText = product.description;
 
-        const imageSrc = product.photo ? `assets/images/test/${product.photo}` : `assets/images/placeholder.png`;
-        Element.prototype.querySelector.call(productElement, '.product-inner img').src = imageSrc;
+        const imageSrc = product.photo
+            ? `assets/images/test/${product.photo}`
+            : `assets/images/placeholder.png`;
+        Element.prototype
+            .querySelector.call(productElement, '.product-inner img')
+            .src = imageSrc;
         
-        Element.prototype.querySelector.call(productElement, 'a').href = `${DOMAIN}/product-details.html?${QUERY_PARAMS_PRODUCT_KEY}=${product.id_product}`;
-        Element.prototype.querySelector.call(productElement, 'button').addEventListener('click', () => { alert(product.id_product + ' ' + product.product_name); });
+        const params = new URLSearchParams(locationQueryParams);
+        params.set(QUERY_PARAMS_PRODUCT_KEY, product.id_product);
+        Element.prototype
+            .querySelector.call(productElement, 'a')
+            .href = `${DOMAIN}/product-details.html?${params.toString()}`;
+        Element.prototype
+            .querySelector.call(productElement, 'button')
+            .addEventListener('click', () => {
+                alert(product.id_product + ' ' + product.product_name);
+            });
 
         return productElement;
     });
@@ -51,16 +72,14 @@ const renderProducts = products => {
     });
 }
 
-fetch(`${API_URL}/category?type=${PC_CONSTRUCTOR_CATEGORY_TYPE_ID}`)
+const selectedCategoryTypeId = queryParams.get(QUERY_PARAMS_SELECTED_CATEGORY_TYPE_KEY);
+fetch(`${API_URL}/category?${QUERY_PARAMS_SELECTED_CATEGORY_TYPE_KEY}=${selectedCategoryTypeId || PC_CONSTRUCTOR_CATEGORY_TYPE_ID}`)
     .then(response => response.json())
     .then(categories => {
         renderCategories(categories);
     });
 
-const locationQueryParams = window.location.search;
-const queryParams = new URLSearchParams(locationQueryParams);
 const selectedCategoryId = queryParams.get(QUERY_PARAMS_SELECTED_CATEGORY_KEY);
-
 if (selectedCategoryId) {
     fetch(`${API_URL}/products?category=${selectedCategoryId}`)
         .then(response => response.json())
