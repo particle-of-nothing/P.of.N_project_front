@@ -1,0 +1,29 @@
+.outter{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.block-name{
+    font-size: 25px;
+    color: white;
+}
+
+.column{
+    /* margin-left: 10px; */
+    width: 50%;
+}
+
+.left-side-block{
+    margin-right: 10px;
+    height: 600px;
+    border-radius: 15px;
+    border: 1px solid var(--primary-color);
+}
+
+.right-side-block{
+
+    height: 600px;
+    border-radius: 15px;
+    border: 1px solid var(--primary-color);
+}
