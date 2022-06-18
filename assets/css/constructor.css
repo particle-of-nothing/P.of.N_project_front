@@ -77,3 +77,20 @@ ul {
     margin-left: 20px;
     margin-bottom: 20px;
 }
+
+
+.suggestions-wrapper {
+    display: flex;
+    background-color: var(--suggestions-bg-color);
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: var(--product-border-radius);
+}
+
+.suggestions-wrapper .packet-preview {
+    width: 30%;
+}
+
+.suggestions-wrapper .list {
+    width: 70%;
+}

@@ -1,6 +1,53 @@
 const locationQueryParams = window.location.search;
 const queryParams = new URLSearchParams(locationQueryParams);
 
+let activePacket;
+
+const productAddHandler = selectedProductId => {
+    const headers = new Headers();
+    headers.append('authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjcsImlhdCI6MTY1NTMyMzA2NH0.VQzYAezQvib70R7dMW9Nm47g-7EGM_Wn7y44oOlawxA')
+
+    if (activePacket) {
+        fetch(
+            `${API_URL}/packets/${packet.id}/products`,
+            {
+                method: 'PATCH',
+                headers,
+                body: JSON.stringify({ id: selectedProductId })
+            }
+        )
+            .then(response => response.json())
+            .then(packet => {
+                activePacket = packet;
+                renderProducts(packet.products, 'packet-products-list')
+            });
+    } else {
+        fetch(
+            `${API_URL}/packets`,
+            {
+                method: 'POST',
+                headers
+            }
+        )
+            .then(response => response.json())
+            .then(packet => {
+                return fetch(
+                    `${API_URL}/packets/${packet.id}/products`,
+                    {
+                        method: 'PATCH',
+                        headers,
+                        body: JSON.stringify({ id: selectedProductId })
+                    }
+                )
+                    .then(response => response.json());
+            })
+            .then(packet => {
+                activePacket = packet;
+                renderProducts(packet.products, 'packet-products-list')
+            });
+    }
+}
+
 const renderCategories = categories => {
 
     const categoriesMenuElement = document.getElementById('caterories-navigation');
@@ -28,17 +75,16 @@ const renderCategories = categories => {
     });
 }
 
-const renderProducts = products => {
-
-    const productsListElement = document.getElementById('constructor-products-list');
+const renderProducts = (products, listId = 'constructor-products-list') => {
+    const productsListElement = document.getElementById(listId);
     const productTemplateElement = document.getElementById('product-template');
-    
+
     productsListElement.innerHTML = '';
-    
+
     const productsElements = products.map(product => {
         const productElement = productTemplateElement.cloneNode(true);
         productElement.removeAttribute('hidden')
-        
+
         Element.prototype
             .querySelector.call(productElement, '.title')
             .innerText = product.product_name;
@@ -52,7 +98,7 @@ const renderProducts = products => {
         Element.prototype
             .querySelector.call(productElement, '.product-inner img')
             .src = imageSrc;
-        
+
         const params = new URLSearchParams(locationQueryParams);
         params.set(QUERY_PARAMS_PRODUCT_KEY, product.id_product);
         Element.prototype
@@ -60,9 +106,7 @@ const renderProducts = products => {
             .href = `${DOMAIN}/product-details.html?${params.toString()}`;
         Element.prototype
             .querySelector.call(productElement, 'button')
-            .addEventListener('click', () => {
-                alert(product.id_product + ' ' + product.product_name);
-            });
+            .addEventListener('click', () => productAddHandler(product.id_product));
 
         return productElement;
     });
