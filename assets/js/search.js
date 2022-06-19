@@ -49,8 +49,7 @@
 
     const processInput = event => {
         if (event.target.value) {
-            fetch(`${API_URL}/search?s=${event.target.value}`)
-                .then(response => response.json())
+            search(event.target.value)
                 .then(searchResult => {
                     renderSearchResult(searchResult);
                 });

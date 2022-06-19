@@ -4,48 +4,17 @@ const queryParams = new URLSearchParams(locationQueryParams);
 let activePacket;
 
 const productAddHandler = selectedProductId => {
-    const headers = new Headers();
-    headers.append('authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjcsImlhdCI6MTY1NTMyMzA2NH0.VQzYAezQvib70R7dMW9Nm47g-7EGM_Wn7y44oOlawxA')
-
+    let result;
     if (activePacket) {
-        fetch(
-            `${API_URL}/packets/${packet.id}/products`,
-            {
-                method: 'PATCH',
-                headers,
-                body: JSON.stringify({ id: selectedProductId })
-            }
-        )
-            .then(response => response.json())
-            .then(packet => {
-                activePacket = packet;
-                renderProducts(packet.products, 'packet-products-list')
-            });
+        result = addProductToPacket(packet.id, selectedProductId)
     } else {
-        fetch(
-            `${API_URL}/packets`,
-            {
-                method: 'POST',
-                headers
-            }
-        )
-            .then(response => response.json())
-            .then(packet => {
-                return fetch(
-                    `${API_URL}/packets/${packet.id}/products`,
-                    {
-                        method: 'PATCH',
-                        headers,
-                        body: JSON.stringify({ id: selectedProductId })
-                    }
-                )
-                    .then(response => response.json());
-            })
-            .then(packet => {
-                activePacket = packet;
-                renderProducts(packet.products, 'packet-products-list')
-            });
+        result = createPacket()
+            .then(packet => addProductToPacket(packet.id, selectedProductId));
     }
+    result.then(packet => {
+        activePacket = packet;
+        renderProducts(packet.products, 'packet-products-list');
+    });
 }
 
 const renderCategories = categories => {
@@ -117,17 +86,11 @@ const renderProducts = (products, listId = 'constructor-products-list') => {
 }
 
 const selectedCategoryTypeId = queryParams.get(QUERY_PARAMS_SELECTED_CATEGORY_TYPE_KEY);
-fetch(`${API_URL}/category?${QUERY_PARAMS_SELECTED_CATEGORY_TYPE_KEY}=${selectedCategoryTypeId || PC_CONSTRUCTOR_CATEGORY_TYPE_ID}`)
-    .then(response => response.json())
-    .then(categories => {
-        renderCategories(categories);
-    });
+getCategories(selectedCategoryTypeId)
+    .then(categories => renderCategories(categories));
 
 const selectedCategoryId = queryParams.get(QUERY_PARAMS_SELECTED_CATEGORY_KEY);
 if (selectedCategoryId) {
-    fetch(`${API_URL}/products?category=${selectedCategoryId}`)
-        .then(response => response.json())
-        .then(products => {
-            renderProducts(products);
-        });
+    getProductsByCategoryId(selectedCategoryId)
+        .then(products => renderProducts(products));
 }

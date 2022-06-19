@@ -32,8 +32,7 @@ const renderOptions = options => {
     });
 }
 
-fetch(`${API_URL}/products/${productId}`)
-    .then(response => response.json())
+getProductById(productId)
     .then(product => {
         const productNameElement = document.getElementById('product-name');
         productNameElement.innerText = product.product_name;
