@@ -4,7 +4,7 @@ const signOut = () => {
 }
 
 const authRedirect = (backwardUrl = '') => {
-    window.location.href = `${DOMAIN}/sign-in.html${backwardUrl ? '?backwardUrl=' + backwardUrl : ''}`;
+    window.location.href = `${DOMAIN}/sign-in.html${backwardUrl ? `?${QUERY_PARAMS_BACKWARD_URL_KEY}=`+ backwardUrl : ''}`;
 }
 
 const getTokenFromResponse = response => {
@@ -104,6 +104,27 @@ const refreshUser = () => {
 const signUp = (login, password) => {
     return fetch(
         `${API_URL}/sign-up`,
+        {
+            method: 'POST',
+            body: JSON.stringify({ login, password })
+        },
+    )
+        .then(response => {
+
+            const token = getTokenFromResponse(response);
+            if (!token) {
+                throw 'No token provided';
+            }
+            
+            localStorage.setItem(LS_TOKEN_KEY, token);
+
+            return response.json();
+        });
+}
+
+const auth = (login, password) => {
+    return fetch(
+        `${API_URL}/sign-in`,
         {
             method: 'POST',
             body: JSON.stringify({ login, password })

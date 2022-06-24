@@ -13,21 +13,24 @@
     <div id="particles-js"></div>
     <div class="block">
         <h1>Авторизация</h1>
-        <form class="form" action="" method="post">
-            <input class="input" type="login" placeholder="Логин">
-            <input class="input" type="password" placeholder="Пароль">
+        <form id="sign-in-form" class="form" action="" method="post">
+            <input id="login-input" class="input" type="text" placeholder="Логин">
+            <input id="password-input" class="input" type="password" placeholder="Пароль">
             <button class="btn" type="submit">Войти</button>
         </form>
-        <a class="auth-link" href="sign-up.html">Зарегистрироваться</a>
+        <a id="reg-link-backward-url" class="auth-link" href="sign-up.html">Зарегистрироваться</a>
     </div>
     
     
     <!-- General scripts -->
     <script src="assets/js/jQuery.js"></script>
     <script src="assets/js/particles.js"></script>
+    <script src="assets/js/consts.js"></script>
+    <script src="assets/js/overlay.js"></script>
     <script src="assets/js/data.js"></script>
     <script src="assets/js/main.js"></script>
     <!-- General scripts -->
+    <script src="assets/js/sign-in.js"></script>  
 
 
 </body>
