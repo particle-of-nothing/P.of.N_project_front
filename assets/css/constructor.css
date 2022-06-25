@@ -94,3 +94,31 @@ ul {
 .suggestions-wrapper .list {
     width: 70%;
 }
+
+.suggestions-wrapper .list .head-section {
+    display: flex;
+}
+
+.suggestions-wrapper .list .head-section .title {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.suggestions-wrapper .list .head-section .close-button {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: var(--suggestions-close-bg-color);
+    cursor: pointer;
+    border-radius: var(--button-border-radius);
+}
+
+.suggestions-wrapper .list .head-section .close-button:hover {
+    background-color: var(--suggestions-close-bg-color-hover);
+}
+
+.suggestions-wrapper .list .head-section .close-button img {
+    width: 100%;
+    height: auto;
+}

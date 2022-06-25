@@ -29,7 +29,6 @@ const getSignInSearch = (srcHref, backwardUrl) => {
                     return;
                 }
                 window.location.href = backwardUrl;
-                // 
             });
     });
 

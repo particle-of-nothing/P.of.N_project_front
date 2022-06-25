@@ -6,6 +6,8 @@
     --suggestions-bg-color: #545454;
     --product-border-radius: 10px;
     --button-border-radius: 4px;
+    --suggestions-close-bg-color: transparent;
+    --suggestions-close-bg-color-hover: #fff2;
 }
 
 html,
@@ -293,22 +295,18 @@ INPUT[type="text"] {
 
 .products-list .product-item {
     position: relative;
-    padding: 10px;
+    padding: 15px;
     box-sizing: border-box;
     height: 400px;
     width: 33.333%;
-    background-color: var(--product-bg-color);
-    border-radius: var(--product-border-radius);
-    transition: all ease-in .2s;
-    border: 1px solid transparent;
 }
 
 .products-list.inline .product-item {
     width: 100%;
-    height: 100px;
+    height: 130px;
 }
 
-.products-list .product-item:hover {
+.products-list .product-item a:hover {
     background: var(--product-bg-color-hover);
     border: 1px solid var(--primary-color);
 }
@@ -317,6 +315,12 @@ INPUT[type="text"] {
     display: block;
     width: 100%;
     height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: var(--product-bg-color);
+    border-radius: var(--product-border-radius);
+    transition: all ease-in .2s;
+    border: 1px solid transparent;
     border-radius: var(--product-border-radius);
 }
 
@@ -366,10 +370,6 @@ INPUT[type="text"] {
     overflow: hidden;
 }
 
-.products-list.inline .product-item .props {
-    /*  */
-}
-
 .products-list .product-item .title {
     margin: 0;
     margin-bottom: 8px;
@@ -380,36 +380,69 @@ INPUT[type="text"] {
     width: 100%;
 }
 
-.products-list .product-item button {
-    border-radius: var(--button-border-radius);
-    width: calc(100% - 20px);
-    height: 40px;
-    position: absolute;
-    bottom: -10px;
-    left: 10px;
-    border: none;
-    background-color: var(--primary-color);
+
+.products-list .buttons .product-quantity,
+.products-list .buttons .minus-btn {
+    display: none;
 }
 
-.products-list .product-item button img {
+.products-list .buttons.extended .product-quantity,
+.products-list .buttons.extended .minus-btn {
+    display: initial;
+}
+
+
+.products-list .buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    width: calc(100% - 50px);
+    height: 40px;
+}
+
+.products-list.inline .buttons {
+    flex-direction: column;
+    justify-content: space-between;
+    right: 25px;
+    top: 25px;
+    bottom: unset;
+    left: unset;
+    height: calc(100% - 50px);
+    width: 40px;
+}
+
+.products-list .buttons button {
+    border: none;
+    border-radius: var(--button-border-radius);
+    background-color: var(--primary-color);
+    height: 40px;
+    width: 100%;
+}
+
+.products-list .buttons.extended button {
+    width: 40px;
+}
+
+.products-list .buttons .product-quantity {
+    min-width: 35px;
+    height: 35px;
+    text-align: center;
+}
+
+.products-list .buttons button img {
     width: 20px;
     margin: 0 auto;
 }
 
-.products-list.inline .product-item button {
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    bottom: unset;
-    left: unset;
-}
 
-
-.products-list .product-item button:active {
+.products-list .buttons button:active {
     background-color: var(--primary-color-active);
 }
+
 
 .product-option {
     display: flex;
@@ -420,10 +453,6 @@ INPUT[type="text"] {
     flex-shrink: 0;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.product-option .product-option-value {
-    /*  */
 }
 
 .icon {

@@ -72,14 +72,21 @@
         </div>
         <div class="suggestions-wrapper">
             <div class="packet-preview">
-                <h3 id="packet-title">111111111111</h3>
+                <h3 id="packet-title"></h3>
                 <div id="packet-products-list" class="products-list inline">
 
                 </div>
             </div>
-            <div class="list products-list">
-                <h3>Добавить в сборку</h3>
-                <h4 id="suggestions-current-category"></h4>
+            <div class="list">
+                <div class="head-section">
+                    <div class="title">
+                        <h3>Добавить в сборку</h3>
+                        <h4 id="suggestions-current-category"></h4>
+                    </div>
+                    <button id="close-suggestions" class="close-button">
+                        <img src="assets/images/close.svg" alt="">
+                    </button>
+                </div>
                 <div id="suggestions-products-list" class="products-list">
 
                 </div>
@@ -128,9 +135,15 @@
                 </div>
             </div>
         </a>
-        <button>
-            <img src="assets/images/plus-icon.png" alt="">
-        </button>
+        <div class="buttons">
+            <button class="plus-btn">
+                <img src="assets/images/plus.svg" alt="">
+            </button>
+            <div class="product-quantity">1</div>
+            <button class="minus-btn">
+                <img src="assets/images/minus.svg" alt="">
+            </button>
+        </div>
     </div>
 
     <div id="overlay-host">

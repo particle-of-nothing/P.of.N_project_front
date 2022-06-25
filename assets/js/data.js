@@ -58,6 +58,22 @@ const addProductToPacket = (packetId, productId) => {
         .catch(error => console.error(error.message));
 }
 
+const removeProductFromPacket = (packetId, productId) => {
+    return requestWithCredantials()
+        .then(() => {
+            return fetch(
+                `${API_URL}/packets/${packetId}/products`,
+                {
+                    method: 'DELETE',
+                    headers: getAuthHeader(),
+                    body: JSON.stringify({ id: productId })
+                }
+            )
+        })
+        .then(response => response.json())
+        .catch(error => console.error(error.message));
+}
+
 const createPacket = () => {
     return requestWithCredantials()
         .then(() => {
@@ -65,6 +81,21 @@ const createPacket = () => {
                 `${API_URL}/packets`,
                 {
                     method: 'POST',
+                    headers: getAuthHeader(),
+                }
+            )
+        })
+        .then(response => response.json())
+        .catch(error => console.error(error.message));
+}
+
+const getPacketById = (id) => {
+    return requestWithCredantials()
+        .then(() => {
+            return fetch(
+                `${API_URL}/packets/${id}`,
+                {
+                    method: 'GET',
                     headers: getAuthHeader(),
                 }
             )
