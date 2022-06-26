@@ -49,6 +49,10 @@ body {
 
 }
 
+#profile-link {
+  cursor: pointer;
+}
+
 /* footer */
 
 #footer-img {
