@@ -8,6 +8,7 @@ const WP_CONSTRUCTOR_CATEGORY_TYPE_ID = 2;
 const QUERY_PARAMS_SELECTED_CATEGORY_TYPE_KEY = 'type';
 const QUERY_PARAMS_SELECTED_CATEGORY_KEY = 'category';
 const QUERY_PARAMS_PRODUCT_KEY = 'product';
+const QUERY_PARAMS_PACKET_KEY = 'packet';
 const QUERY_PARAMS_BACKWARD_URL_KEY = 'backwardUrl';
 
 const LS_TOKEN_KEY = 'token';

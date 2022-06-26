@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/constructor.css">
+    <link rel="stylesheet" href="assets/css/packet-details.css">
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">
+    <title>Particle_project</title>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <div id="page-wrapper">
+        <header class="header">
+            <div class="header_inner">
+                <a class="header_logo_link" href="index.html">P.of.N_project</a>
+                <div class="search" id="search">
+                    <input type="text" id="search-input" class="search-field" placeholder="Введите поисковый запрос">
+                    <img src="assets/images/lupa.png" alt="" class="search-icon">
+                    <div id="search-results-template" hidden>
+                        <!-- Products here -->
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a class="nav_link" href="contacts.html">контакты</a>
+                    <a class="nav_link" href="FAQ.html">FAQ</a>
+                    <a class="nav_link" href="favourites.html">избранное</a>
+                    <!-- <a class="nav_link" href="profile.html">профиль</a> -->
+                </nav>
+            </div>
+        </header>
+        <div class="block_one">
+            <div class="space_between">
+                <div class="nav_two">
+                    <a class="nav_link_two" href="pc-page.html">каталог товаров</a>
+                </div>
+                <div class="nav_two_right">
+                    <a class="nav_link_two" href="constructor.html?type=1">сборка пк</a>
+                    <a class="nav_link_two" href="constructor.html?type=2">сборка рабочего места</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="page_name">
+            сборка
+            <div class="subtitle-underline"></div>
+        </div>
+
+        <div id="packet-block">
+            <span id="packet-title">
+
+            </span>
+            <div id="packet-items-list" class="items-list">
+
+            </div>
+        </div>
+
+
+    <div class="footer-img">
+        <img src="assets/images/footer1d1d1d.png" id="footer-img">
+    </div>
+    <footer id="footer">
+        <div class="nav">
+            <a class="nav_link_footer" href="contacts.html">контакты</a>
+            <a class="nav_link_footer" href="favourites.html">избранное</a>
+            <a class="nav_link_footer" href="profile.html">профиль</a>
+            <a class="nav_link_footer" href="FAQ.html">FAQ</a>
+        </div>
+        <div><a class="header_logo_link" href="index.html">P.of.N_project</a></div>
+        <div class="media">
+            <a class="massenger-link" href="http://vk.com">
+                <img src="assets/images/vk-icon.png" alt="" class="icon">
+            </a>
+            <a class="massenger-link" href="http://vk.com">
+                <img src="assets/images/whatsapp-icon.png" alt="" class="icon">
+            </a>
+            <a class="massenger-link" href="http://vk.com">
+                <img src="assets/images/telegram-icon.png" alt="" class="icon">
+            </a>
+            <a class="massenger-link" href=""mailto:abc@example.com?subject=Feedback&body=Message">
+                <img src="assets/images/mail-icon.png" alt="" class="icon">
+            </a>
+            <a class="massenger-link" href="tel:+78000000000">
+                <img src="assets/images/phone-icon.png" alt="" class="icon">
+            </a>
+        </div>
+    </footer>
+</div>
+
+    <!-- Шаблон продукта -->
+    <div class="product-item" id="product-template" hidden>
+        <a>
+            <div class="product-inner">
+                <img>
+                <div class="product-info">
+                    <h4 class="title"></h4>
+                    <span class="props"></span>
+                </div>
+            </div>
+        </a>
+        <div class="buttons">
+            <button class="plus-btn">
+                <img src="assets/images/plus.svg" alt="">
+            </button>
+            <div class="product-quantity">1</div>
+            <button class="minus-btn">
+                <img src="assets/images/minus.svg" alt="">
+            </button>
+        </div>
+    </div>
+
+    <div id="overlay-host">
+        <!-- Всяка всячина, чтобы показать поверх страницы -->
+    </div>
+
+
+    <!-- General scripts -->
+    <script src="assets/js/jQuery.js"></script>
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/consts.js"></script>
+    <script src="assets/js/debounce.js"></script>
+    <script src="assets/js/overlay.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/search.js"></script>
+    <!-- General scripts -->
+
+    <script src="assets/js/packet-detail.js"></script>
+
+</body>
+
+</html>

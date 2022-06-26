@@ -51,20 +51,18 @@
         </div>
         <div class="subtitle-underline"></div>
         <div class="outter">
-            <div class="column">
-                <div class="block-name">Сборки ПК</div>
-                <div class="left-side-block">
+            <div class="column packets-block">
+                <div class="block-name">Ваши сборки</div>
+                <div id="packets-list" class="items-list inline">
 
                 </div>
             </div>
-            <div class="column">
-
-                <div class="block-name">Сборки рабочего места</div>
-                <div class="right-side-block">
+            <div class="column favourites-block">
+                <div class="block-name">Понравившиеся товары</div>
+                <div class="items-list">
 
                 </div>
             </div>
-
         </div>
 
         <div class="footer-img">
@@ -99,22 +97,48 @@
     </div>
     </div>
 
+    <!-- Шаблон пакета -->
+    <div class="packet-item" id="packet-template">
+        <a class="general-link">
+            <div class="packet-inner">
+                <div class="images"></div>
+                <div class="packet-info">
+                    <h4 class="title"></h4>
+                    <div class="date">
+                        <span>Дата создания: </span>
+                        <span class="date-value"></span>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <div class="controls">
+            <a class="edit-link">
+                <span class="text">Изменить сборку</span>
+                <img class="icon" src="assets/images/edit.svg" alt="">
+            </a>
+        </div>
+    </div>
+
     <div id="overlay-host">
         <!-- Всяка всячина, чтобы показать поверх страницы -->
     </div>
 
+    <!-- General scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
-        integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     <script src="assets/js/consts.js"></script>
     <script src="assets/js/debounce.js"></script>
     <script src="assets/js/overlay.js"></script>
     <script src="assets/js/data.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/search.js"></script>
+    <!-- General scripts -->
+
+    <script src="assets/js/favorites.js"></script>
 </body>
 
 </html>

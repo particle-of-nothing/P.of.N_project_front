@@ -20,7 +20,7 @@
     const renderSearchResult = searchResult => {
 
         const productsListElement = document.createElement('div');
-        productsListElement.classList.add('products-list', 'inline');
+        productsListElement.classList.add('items-list', 'inline');
 
         searchResultElement.innerHTML = '';
         searchResultElement.appendChild(productsListElement);

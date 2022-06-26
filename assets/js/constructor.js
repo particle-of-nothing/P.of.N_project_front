@@ -28,12 +28,12 @@ const productRemoveHandler = selectedProductId => {
 
 const renderPacket = packet => {
     packetTitleElement.innerText = packet.name || PACKET_DEFAULT_NAME;
-    renderProducts(packet.products, 'packet-products-list');
+    renderProducts(packet.products, 'packet-items-list');
 }
 
 const closePacket = () => {
     packetTitleElement.innerText = PACKET_NAME_TIP;
-    const packetProductsListElement = document.getElementById('packet-products-list');
+    const packetProductsListElement = document.getElementById('packet-items-list');
     packetProductsListElement.innerHTML = '';
 }
 
@@ -64,7 +64,7 @@ const renderCategories = categories => {
     });
 }
 
-const renderProducts = (products, listId = 'constructor-products-list') => {
+const renderProducts = (products, listId = 'constructor-items-list') => {
     const productsListElement = document.getElementById(listId);
     const productTemplateElement = document.getElementById('product-template');
 

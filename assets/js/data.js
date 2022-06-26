@@ -104,6 +104,36 @@ const getPacketById = (id) => {
         .catch(error => console.error(error.message));
 }
 
+const getPackets = () => {
+    return requestWithCredantials()
+        .then(() => {
+            return fetch(
+                `${API_URL}/packets`,
+                {
+                    method: 'GET',
+                    headers: getAuthHeader(),
+                }
+            )
+        })
+        .then(response => response.json())
+        .catch(error => console.error(error.message));
+}
+
+const getProductsPacketId = (id) => {
+    return requestWithCredantials()
+        .then(() => {
+            return fetch(
+                `${API_URL}/packets/${id}/products`,
+                {
+                    method: 'GET',
+                    headers: getAuthHeader(),
+                }
+            )
+        })
+        .then(response => response.json())
+        .catch(error => console.error(error.message));
+}
+
 const refreshUser = () => {
     return fetch(
         `${API_URL}/refresh`,

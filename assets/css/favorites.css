@@ -1,29 +1,23 @@
-.outter{
+.outter {
     display: flex;
-    justify-content: space-between;
-
+    margin-top: 30px;
 }
 
-.block-name{
+.block-name {
     font-size: 25px;
     color: white;
 }
 
-.column{
-    /* margin-left: 10px; */
+.column {
     width: 50%;
-}
-
-.left-side-block{
-    margin-right: 10px;
     height: 600px;
     border-radius: 15px;
     border: 1px solid var(--primary-color);
+    padding: 15px;
+    box-sizing: border-box;
 }
 
-.right-side-block{
-
-    height: 600px;
-    border-radius: 15px;
-    border: 1px solid var(--primary-color);
+.packets-block {
+    margin-right: 15px;
+    overflow: auto;
 }
